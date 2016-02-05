@@ -5,6 +5,7 @@ import ReactCSS from 'reactcss';
 import _ from 'lodash';
 
 import Droppable from './Droppable';
+import Editor from './Editor';
 
 class Squash extends React.Component {
   state = {
@@ -38,19 +39,26 @@ class Squash extends React.Component {
     event.preventDefault();
     _.map(event.dataTransfer.files, (file) => {
       if (file.type.match(/image\/svg/)) {
-        // console.log(file.size);
+        console.log(file);
         var reader = new FileReader();
         reader.onload = (event) => {
           this.setState({
-            assets: this.state.assets.concat([event.target.result]),
+            assets: this.state.assets.concat([
+              {
+                svg: event.target.result,
+                size: file.size,
+                name: file.name.replace(/\.svg$/, ''),
+              },
+            ]),
           });
         };
 
-        reader.readAsDataURL(file);
+        reader.readAsText(file);
       } else {
         alert('Please Only Upload SVGs');
       }
     });
+    this.setState({ dragging: false });
   }
 
   render() {
@@ -60,7 +68,11 @@ class Squash extends React.Component {
            onDragOver={ this.handleDragOver }
            onDragLeave={ this.handleDragLeave }
       >
-        <Droppable dragging={ this.state.dragging } />
+        <Droppable
+          visible={ this.state.dragging || this.state.assets.length === 0 }
+          dragging={ this.state.dragging }
+        />
+        <Editor assets={ this.state.assets } />
       </div>
     );
   }
