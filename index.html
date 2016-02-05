@@ -10,18 +10,18 @@
   <body>
     <div id="root" />
 
-    <script type="text/javascript" src="../jspm_packages/system.js"></script>
-    <script type="text/javascript" src="../config.js"></script>
+    <script type="text/javascript" src="jspm_packages/system.js"></script>
+    <script type="text/javascript" src="config.js"></script>
     <script type="text/javascript">
       var hotReload;
       if (location.origin.match(/localhost|file/)) {
         System.trace = true;
         hotReload = System.import('capaj/systemjs-hot-reloader').then((reload) => {
-          new reload.default(`http://localhost:${ window.location.port }`);
+          new reload.default(`http://localhost:8090`);
         });
       }
       Promise.resolve(hotReload).then(() => {
-        System.import('./index.js');
+        System.import('./src/index.js');
       });
     </script>
   </body>
