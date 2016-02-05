@@ -1,5 +1,5 @@
 System.config({
-  baseURL: __dirname + "/",
+  baseURL: "./",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
@@ -7,7 +7,7 @@ System.config({
       "runtime",
       "optimisation.modules.system"
     ],
-    stage: 0
+    "stage": 0
   },
   paths: {
     "github:*": "jspm_packages/github/*",
@@ -27,6 +27,7 @@ System.config({
     "react": "npm:react@0.14.7",
     "react-dom": "npm:react-dom@0.14.7",
     "reactcss": "github:casesandberg/reactcss@1.0.0",
+    "svgo": "npm:svgo@0.6.1",
     "underscore": "npm:underscore@1.8.3",
     "github:capaj/systemjs-hot-reloader@0.5.5": {
       "debug": "npm:debug@2.2.0",
@@ -95,6 +96,13 @@ System.config({
     },
     "github:necolas/normalize.css@3.0.3": {
       "css": "github:systemjs/plugin-css@0.1.20"
+    },
+    "npm:argparse@1.0.5": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "sprintf-js": "npm:sprintf-js@1.0.3",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:asn1.js@4.4.0": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -169,11 +177,36 @@ System.config({
       "isarray": "npm:isarray@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:chalk@1.1.1": {
+      "ansi-styles": "npm:ansi-styles@2.1.0",
+      "escape-string-regexp": "npm:escape-string-regexp@1.0.4",
+      "has-ansi": "npm:has-ansi@2.0.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "strip-ansi": "npm:strip-ansi@3.0.0",
+      "supports-color": "npm:supports-color@2.0.0"
+    },
     "npm:cipher-base@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "inherits": "npm:inherits@2.0.1",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "string_decoder": "github:jspm/nodelibs-string_decoder@0.1.0"
+    },
+    "npm:clap@1.0.10": {
+      "chalk": "npm:chalk@1.1.1",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:coa@1.0.1": {
+      "constants": "github:jspm/nodelibs-constants@0.1.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "q": "npm:q@1.4.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:colors@1.1.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:constants-browserify@0.0.1": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
@@ -221,6 +254,12 @@ System.config({
       "public-encrypt": "npm:public-encrypt@4.0.0",
       "randombytes": "npm:randombytes@2.0.2"
     },
+    "npm:csso@1.4.4": {
+      "clap": "npm:clap@1.0.10",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
     "npm:debug@2.2.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "ms": "npm:ms@0.7.1",
@@ -249,6 +288,10 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
+    "npm:esprima@2.7.2": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:evp_bytestokey@1.0.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "create-hash": "npm:create-hash@1.1.2",
@@ -257,11 +300,22 @@ System.config({
     "npm:fbjs@0.6.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:has-ansi@2.0.0": {
+      "ansi-regex": "npm:ansi-regex@2.0.0"
+    },
     "npm:hash.js@1.0.3": {
       "inherits": "npm:inherits@2.0.1"
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:js-yaml@3.4.6": {
+      "argparse": "npm:argparse@1.0.5",
+      "esprima": "npm:esprima@2.7.2",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "inherit": "npm:inherit@2.2.3",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:lodash@4.0.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -269,6 +323,12 @@ System.config({
     "npm:miller-rabin@4.0.0": {
       "bn.js": "npm:bn.js@4.10.1",
       "brorand": "npm:brorand@1.0.5"
+    },
+    "npm:mkdirp@0.5.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "minimist": "npm:minimist@0.0.8",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:parse-asn1@5.0.0": {
       "asn1.js": "npm:asn1.js@4.4.0",
@@ -306,6 +366,9 @@ System.config({
     "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:q@1.4.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:randombytes@2.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
@@ -332,6 +395,12 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:sax@1.1.5": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "string_decoder": "github:jspm/nodelibs-string_decoder@0.1.0"
+    },
     "npm:sha.js@2.4.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -345,6 +414,26 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:strip-ansi@3.0.0": {
+      "ansi-regex": "npm:ansi-regex@2.0.0"
+    },
+    "npm:supports-color@2.0.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:svgo@0.6.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "coa": "npm:coa@1.0.1",
+      "colors": "npm:colors@1.1.2",
+      "csso": "npm:csso@1.4.4",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "js-yaml": "npm:js-yaml@3.4.6",
+      "mkdirp": "npm:mkdirp@0.5.1",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "sax": "npm:sax@1.1.5",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0",
+      "whet.extend": "npm:whet.extend@0.9.9"
     },
     "npm:timers-browserify@1.4.2": {
       "process": "npm:process@0.11.2"

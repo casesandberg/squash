@@ -32,6 +32,7 @@
       "react": "npm:react@^0.14.7",
       "react-dom": "npm:react-dom@^0.14.7",
       "reactcss": "github:casesandberg/reactcss@1.0.0",
+      "svgo": "npm:svgo@^0.6.1",
       "underscore": "npm:underscore@^1.8.3"
     },
     "devDependencies": {
