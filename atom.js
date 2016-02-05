@@ -9,7 +9,7 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 300,
-    height: 420,
+    height: 300,
     'title-bar-style': 'hidden',
     title: 'Squash',
   });
